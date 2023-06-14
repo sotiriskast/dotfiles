@@ -1,4 +1,4 @@
-[sotiriskast][repo]'s dotfiles
+dotfiles
 ==========================
 
 [![CI status for Debian][ci badge ubuntu]][ci link Debian]
