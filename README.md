@@ -87,7 +87,7 @@ Here is an example:
 
 # Set PATH additions.
 
-PATH="/Users/alrra/projects/dotfiles/src/bin/:$PATH"
+PATH="/Users/sotiriskast/projects/dotfiles/src/bin/:$PATH"
 
 export PATH
 
