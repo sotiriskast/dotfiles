@@ -1,6 +1,7 @@
-[Cătălin][repo]’s dotfiles
+[SotirisKast][repo]’s dotfiles
 ==========================
 
+[![CI status for Debian][ci badge ubuntu]][ci link Debian]
 [![CI status for macOS][ci badge macos]][ci link macos]
 [![CI status for Ubuntu][ci badge ubuntu]][ci link ubuntu]
 
@@ -19,7 +20,6 @@ Table of Contents
   * [🔀 Forks](#forks)
   * [🌐 Local Settings](#local-settings)
     * [🐚 `~/.bash.local`](#bashlocal)
-    * [🔁 `~/.gitconfig.local`](#gitconfiglocal)
     * [⌨️  `~/.vimrc.local`](#vimrclocal)
 * [↕️  Update](#update)
 * [📑 License](#license)
@@ -32,12 +32,6 @@ To set up the dotfiles run the appropriate snippet in the terminal:
 (⚠️  __DO NOT__ run the `setup` script if you do not fully understand
 [what it does][setup]. Seriously, __DON'T__!)
 
-| OS | Snippet |
-|:---|:---|
-| macOS | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/main/src/os/setup.sh)"` |
-| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/alrra/dotfiles/main/src/os/setup.sh)"` |
-
-That's it! ✨
 
 The setup process will:
 
@@ -54,11 +48,6 @@ The setup process will:
 
 Setup process in action:
 
-<!-- markdownlint-disable MD033 -->
-| <video src="https://user-images.githubusercontent.com/1223565/236653425-5beae04a-39e3-4f29-8113-009e402818e6.mp4" title="Setup process on macOS"/> |<video src="https://user-images.githubusercontent.com/1223565/236653424-1702c359-1b68-4815-b3cc-96f6665c5e88.mp4" title="Setup process on Ubuntu"/> |
-|:---:|:---:|
-<!-- markdownlint-enable MD033 -->
-
 Screenshots
 -----------
 
@@ -68,19 +57,21 @@ Output for `git status`:
 
 | ![Output for Git status on macOS][git output macos] | ![Output for Git status on Ubuntu][git output ubuntu] |
 |:---:|:---:|
-| macOS | Ubuntu |
+| macOS | Ubuntu | Debian
 
 Output for `git log`:
 
 | ![Output for Git log on macOS][git log macos] | ![Output for Git log on Ubuntu][git log ubuntu] |
 |:---:|:---:|
-| macOS | Ubuntu |
+| macOS | Ubuntu | Debian
+
 
 ### tmux & Vim
 
 | ![tmux and Vim on macOS][vim macos] | ![tmux and Vim on Ubuntu][vim ubuntu] |
 |:---:|:---:|
-| macOS | Ubuntu |
+| macOS | Ubuntu | Debian
+
 
 Customize
 ---------
@@ -114,54 +105,6 @@ export PATH
 # Set local aliases.
 
 alias g="git"
-```
-
-#### `~/.gitconfig.local`
-
-The `~/.gitconfig.local` file will be automatically included after
-the configurations from `~/.gitconfig`, thus, allowing its content
-to overwrite or add to the existing Git configurations.
-
-__Note:__ Use `~/.gitconfig.local` to store sensitive information
-such as the Git user credentials, e.g.:
-
-```gitconfig
-[commit]
-
-    # Sign commits using GPG.
-    # https://help.github.com/articles/signing-commits-using-gpg/
-
-    gpgSign = true
-
-[user]
-
-    name = Cătălin Mariș
-    email = account@example.com
-    signingKey = XXXXXXXX
-```
-
-#### `~/.vimrc.local`
-
-The `~/.vimrc.local` file will be automatically sourced after
-`~/.vimrc`, thus, allowing its content to add or overwrite the
-settings from `~/.vimrc`.
-
-Here is an example:
-
-```vim
-" Disable arrow keys in insert mode.
-
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-
-" Disable arrow keys in normal mode.
-
-nnoremap <Down>  :echoe "Use j"<CR>
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
 ```
 
 ### Forks
