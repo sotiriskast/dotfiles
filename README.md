@@ -1,4 +1,4 @@
-dotfiles
+dotfiles Debian/Ubuntu/Mac
 ==========================
 Table of Contents
 -----------------
