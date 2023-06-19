@@ -8,10 +8,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   PhpDock\n\n"
 
-declare -r PHPDOCK_DIRECTORY="$HOME/Code/phpdock"
+declare -r PHPDOCK_DIRECTORY="$HOME/Documents/code/phpdock"
 
 download_phpdock() {
-    execute "git clone https://github.com/panakour/phpdock $PHPDOCK_DIRECTORY" \
+    execute "git clone https://github.com/sotiriskast/phpdock.git $PHPDOCK_DIRECTORY" \
         "Download phpdock"
 }
 
