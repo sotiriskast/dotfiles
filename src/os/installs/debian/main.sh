@@ -6,6 +6,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+print_in_purple "\n • Installs\n\n"
+
 update
 upgrade
 
@@ -21,5 +23,8 @@ upgrade
 ./../npm.sh
 ./tmux.sh
 ./../vim.sh
-
+./docker.sh
+./phpdock.sh
+./android.sh
+./flutter.sh
 ./cleanup.sh
