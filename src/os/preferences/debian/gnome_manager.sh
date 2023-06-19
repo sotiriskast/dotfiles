@@ -7,8 +7,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Privacy\n\n"
 
-execute "sudo apt install gnome-shell-extension-manager" \
-    "Install gnome shell manager"
 execute "sudo apt install gnome-shell-extensions" \
     
     
