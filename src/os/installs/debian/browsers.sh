@@ -41,4 +41,4 @@ if ! package_is_installed "firefox-trunk"; then
 
 fi
 
-install_package "Firefox Nightly" "firefox-trunk"
+#install_package "Firefox Nightly" "firefox-trunk"
