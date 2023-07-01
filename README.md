@@ -22,11 +22,6 @@ The setup process will:
 * Install the [Vim][vim plugins] and
   [VS Code][vscode plugins] plugins.
 
-Setup process in action:
-
-Screenshots
------------
-
 ### Git
 
 Output for `git status`:
