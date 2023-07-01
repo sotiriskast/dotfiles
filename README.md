@@ -1,20 +1,5 @@
 dotfiles Debian/Ubuntu/Mac
 ==========================
-Table of Contents
------------------
-
-* [🔧 Setup](#setup)
-* [📸 Screenshots](#screenshots)
-  * [🔁 Git](#git)
-  * [⌨️  tmux & Vim](#tmux--vim)
-* [💄 Customize](#customize)
-  * [🔀 Forks](#forks)
-  * [🌐 Local Settings](#local-settings)
-    * [🐚 `~/.bash.local`](#bashlocal)
-    * [⌨️  `~/.vimrc.local`](#vimrclocal)
-* [↕️  Update](#update)
-* [📑 License](#license)
-
 Setup
 -----
 
@@ -117,30 +102,3 @@ License
 The code is available under the [MIT license][license].
 
 <!-- Link labels: -->
-
-[ci badge macos]: https://github.com/alrra/dotfiles/workflows/macOS/badge.svg
-[ci badge ubuntu]: https://github.com/alrra/dotfiles/workflows/Ubuntu/badge.svg
-[ci link macos]: https://github.com/alrra/dotfiles/actions?query=workflow%3AmacOS
-[ci link ubuntu]: https://github.com/alrra/dotfiles/actions?query=workflow%3AUbuntu
-[fork]: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
-[git log macos]: https://user-images.githubusercontent.com/1223565/101947422-519fc580-3ba5-11eb-90bc-1438072a45e1.png
-[git log ubuntu]: https://user-images.githubusercontent.com/1223565/101947420-51072f00-3ba5-11eb-9061-efb30ace1c21.png
-[git output macos]: https://user-images.githubusercontent.com/1223565/101947419-51072f00-3ba5-11eb-9e8e-fea987ac97c2.png
-[git output ubuntu]: https://user-images.githubusercontent.com/1223565/101947417-506e9880-3ba5-11eb-805c-0732602c34b3.png
-[Git]: src/git
-[install macos]: src/os/installs/macos
-[install ubuntu]: src/os/installs/ubuntu
-[license]: LICENSE.txt
-[preferences macos]: src/os/preferences/macos
-[preferences ubuntu]: src/os/preferences/ubuntu
-[repo]: https://github.com/alrra
-[setup script]: https://github.com/alrra/dotfiles/blob/main/src/os/setup.sh#L3
-[setup]: src/os/setup.sh
-[shell]: src/shell
-[symlink]: src/os/create_symbolic_links.sh
-[tmux]: src/tmux
-[vim macos]: https://user-images.githubusercontent.com/1223565/101947425-52385c00-3ba5-11eb-9a2a-13e7910d3673.png
-[vim plugins]: src/vim/vim/pack/minpac/start
-[vim ubuntu]: https://user-images.githubusercontent.com/1223565/101947424-519fc580-3ba5-11eb-83b1-e4c3573315a3.png
-[Vim]: src/vim
-[vscode plugins]: src/os/installs/macos/vscode.sh
