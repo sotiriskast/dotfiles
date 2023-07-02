@@ -11,7 +11,6 @@
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/editorconfig-vim/tests/core/tests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/editorconfig-vim/tests/plugin/spec/plugin_tests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/emmet-vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/emmet-vim/docs" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neocomplcache.vim" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neosnippet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neosnippet-snippets" vcs="Git" />
