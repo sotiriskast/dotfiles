@@ -13,32 +13,24 @@ installDocker() {
         "sudo apt-get install \
             apt-transport-https \
             ca-certificates \
-            gnupg \
-            curl" \
+            gnupg-agent \
+            software-properties-common" \
         "Install packages to allow apt to use a repository over HTTPS"
 
     execute \
-        "sudo install -m 0755 -d /etc/apt/keyrings"\
+        "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -" \
+        "Add Docker’s official GPG key"
 
-    execute \
-         " curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg" \
-         "Add Docker’s official GPG key"
-    execute \
-         "sudo chmod a+r /etc/apt/keyrings/docker.gpg" \
-         "Add Docker’s official GPG key"
-    
     execute \
         "sudo apt-key fingerprint 0EBFCD88" \
         "Verify key"
 
     execute \
         "sudo add-apt-repository \
-        'deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-           $(. /etc/os-release && echo "$VERSION_CODENAME")" stable")|'" \
+          'deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+           $(lsb_release -cs) \
+           stable'"
 
-    execute \
-        "sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
-        
     update
 
     install_package "Docker" "docker-ce"

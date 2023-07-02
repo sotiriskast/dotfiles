@@ -15,7 +15,6 @@ upgrade
 ./git.sh
 ./browsers.sh
 ./../nvm.sh
-#./compression_tools.sh
 ./image_tools.sh
 ./misc.sh
 ./misc_tools.sh
@@ -24,10 +23,8 @@ upgrade
 ./../vim.sh
 ./docker.sh
 ./phpdock.sh
-#./golang.sh
 ./android.sh
 ./flutter.sh
-./tmuxinator.sh
-./k8s.sh
+
 
 ./cleanup.sh
