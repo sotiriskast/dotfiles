@@ -11,8 +11,8 @@ execute "gsettings set org.gnome.shell.extensions.dash-to-dock autohide true && 
          gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false" \
     "Autohide the Dock"
 
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM" \
-    "Move Dock to bottom"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock dock-position TOP" \
+    "Move Dock to top"
 
 execute "gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false" \
     "Dock centered"
