@@ -37,6 +37,7 @@ alias m="man"
 alias map="xargs -n1"
 alias n="npm"
 alias p="cd ~/Documents/projects"
+alias co="cd ~/Documents/code"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
 
 alias t="tmux"

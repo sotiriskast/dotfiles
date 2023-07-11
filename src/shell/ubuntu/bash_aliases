@@ -41,3 +41,5 @@ alias o="xdg-open"
 
 alias u="sudo apt-get update \
             && sudo apt-get upgrade -y"
+alias u-p="sudo apt update \
+            && sudo apt upgrade -y"

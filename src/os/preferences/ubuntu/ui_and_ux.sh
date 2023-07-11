@@ -11,6 +11,7 @@ execute "gsettings --schemadir ~/.local/share/gnome-shell/extensions/caffeine@pa
     "get caffeine"
 execute "gsettings --schemadir ~/.local/share/gnome-shell/extensions/caffeine@patapon.info/schemas/ set org.gnome.shell.extensions.caffeine toggle-state true" \
     "Enable Caffeine"
+
 execute "gsettings set org.gnome.desktop.background picture-options 'stretched'" \
     "Set desktop background image options"
 execute "gsettings set com.canonical.Unity.Lenses remote-content-search 'none'" \
