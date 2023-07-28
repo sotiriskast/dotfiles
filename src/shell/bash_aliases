@@ -43,6 +43,7 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias t="tmux"
 alias y="yarn"
 
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Load OS specific configs.

@@ -278,7 +278,7 @@
 
     useConfigOnly = true
 	email = soteris100@gmail.com
-	name = sotiriskast
+	name = sotiris
 
     # [!] DO NOT store sensitive information such as the Git user
     # credentials (`name` / `email`), or things such as the `signingkey`

@@ -32,3 +32,11 @@ alias o="xdg-open"
 
 alias u="sudo apt-get update \
             && sudo apt-get upgrade -y"
+alias up="sudo apt update \
+            && sudo apt upgrade -y"
+            
+alias phpdock82 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd ~/Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
+alias phpdock81 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd ~/Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
+alias phpdock80 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd ~/Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
+alias phpdock74 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd ~/Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=7.4 && make uplocal"
+alias phpdock73 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd ~/Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=7.3 && make uplocal"
