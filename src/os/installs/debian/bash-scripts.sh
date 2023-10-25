@@ -10,11 +10,11 @@ print_in_purple "\n   BashScripts\n\n"
 
 declare -r BASH_SCRIPTS_DIRECTORY="$HOME/Documents/projects/bash_scripts/"
 
-download_phpdock() {
+download_bash_scripts() {
     execute "git clone https://github.com/sotiriskast/bash_scripts.git $BASH_SCRIPTS_DIRECTORY" \
-        "Download phpdock"
+        "Download Bash Scripts"
 }
 
 if [ ! -d "$BASH_SCRIPTS_DIRECTORY" ]; then
-    download_phpdock
+    download_bash_scripts
 fi
