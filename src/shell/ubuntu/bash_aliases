@@ -36,16 +36,20 @@ alias show-desktop-icons="gsettings set org.gnome.desktop.background show-deskto
 alias o="xdg-open"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Update applications and CLTs.
 
 alias u="sudo apt-get update \
             && sudo apt-get upgrade -y"
 alias up="sudo apt update \
             && sudo apt upgrade -y"
-            
-alias phpdock82 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
-alias phpdock81 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
-alias phpdock80 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
-alias phpdock74 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=7.4 && make uplocal"
-alias phpdock73 ="sudo systemctl stop nginx.service mariadb.service php7.4-fpm.service && cd Documents/ideaseven/docker_project/phpdock/ && export PHP_VERSION=7.3 && make uplocal"
+
+alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
+alias phpdock81="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
+alias phpdock80="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
+alias phpdock74="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.4 && make uplocal"
+alias phpdock73="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.3 && make uplocal"
+
+alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.sh"
+alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
+alias docker-import="bash ~/Documents/projects/bash_scripts/docker_mysql_import.sh"
+alias docker-create="bash ~/Documents/projects/bash_scripts/docker_mysql_create.sh"

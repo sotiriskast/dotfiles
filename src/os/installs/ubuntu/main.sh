@@ -23,6 +23,7 @@ upgrade
 ./../vim.sh
 ./docker.sh
 ./phpdock.sh
+./bash-scripts.sh
 ./android.sh
 ./flutter.sh
 

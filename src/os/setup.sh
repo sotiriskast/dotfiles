@@ -170,7 +170,7 @@ verify_os() {
     # Check if the OS is `macOS` and
     # it's above the required version.
 
-  
+
 }
 
 # ----------------------------------------------------------------------
