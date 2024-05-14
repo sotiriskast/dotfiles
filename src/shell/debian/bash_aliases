@@ -34,7 +34,51 @@ alias u="sudo apt-get update \
             && sudo apt-get upgrade -y"
 alias up="sudo apt update \
             && sudo apt upgrade -y"
+function dnames-fn {
+	for ID in `docker ps | awk '{print $1}' | grep -v 'CONTAINER'`
+	do
+    	docker inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+	done
+}
+function docker-start {
 
+if [ -n "$(docker ps -a -q -f id=$1)" ]; then
+    if [ -n "$(docker ps -aq -f status=exited -f id=$1)" ]; then
+        # cleanup
+        echo 'status exited'
+    else
+        echo $1;
+            [ ! -z "$1" ] && docker start "$1" || echo docker start $(docker ps -qa)
+    fi
+else
+    if [ ! -z "$1" ]; then
+        echo "Container are not exists: ${1}";
+    else
+        docker start $(docker ps -qa)
+    fi
+fi
+
+}
+function docker-restart {
+    if [ -n "$(docker ps -a -q -f id=$1)" ]; then
+        if [ -n "$(docker ps -aq -f status=exited -f id=$1)" ]; then
+            # cleanup
+            echo 'status exited'
+        else
+            echo $1;
+                [ ! -z "$1" ] && docker restart "$1" || echo docker restart $(docker ps -qa)
+        fi
+    else
+        if [ ! -z "$1" ]; then
+            echo "Container are not exists: ${1}";
+        else
+            docker restart $(docker ps -qa)
+        fi
+    fi
+}
+function dockerps() {
+    docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"
+}
 alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
 alias phpdock81="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
 alias phpdock80="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
@@ -45,3 +89,7 @@ alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.
 alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
 alias docker-import="bash ~/Documents/projects/bash_scripts/docker_mysql_import.sh"
 alias docker-create="bash ~/Documents/projects/bash_scripts/docker_mysql_create.sh"
+alias dstart=docker-start
+alias drestart=docker-restart
+alias dnames=dnames-fn
+alias dps=dockerps
