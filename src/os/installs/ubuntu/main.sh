@@ -26,6 +26,8 @@ upgrade
 ./bash-scripts.sh
 ./android.sh
 ./flutter.sh
+./dbeaver.sh
+./discord.sh
 
 
 ./cleanup.sh
