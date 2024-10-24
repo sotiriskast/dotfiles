@@ -39,7 +39,8 @@ alias o="xdg-open"
 # Update applications and CLTs.
 
 alias u="sudo apt-get update \
-            && sudo apt-get upgrade -y"
+            && sudo apt-get upgrade -y
+            && sudo snap refresh"
 alias up="sudo apt update \
             && sudo apt upgrade -y"
 
