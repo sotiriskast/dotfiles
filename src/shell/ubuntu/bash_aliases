@@ -104,6 +104,37 @@ function dexec {
 function kill-any() {
     kill -9 $(pgrep -f $1)
 }
+
+
+# Add this to your ~/.bashrc or ~/.bash_aliases
+vpn() {
+    local config_path="$HOME/.ssh/ic.ovpn"
+
+    case "$1" in
+        "connect"|"start")
+            openvpn3 session-start --config "$config_path"
+            ;;
+        "disconnect"|"stop")
+            openvpn3 session-manage --config "$config_path" --disconnect
+            ;;
+        "restart")
+            openvpn3 session-manage --config "$config_path" --restart
+            ;;
+        *)
+            echo "Usage: vpn [connect|disconnect|restart]"
+            ;;
+    esac
+}
+# Bash completion for vpn function
+_vpn_completion() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local commands="connect disconnect restart start stop"
+
+    COMPREPLY=($(compgen -W "$commands" -- "$cur"))
+}
+
+# Register the completion function
+complete -F _vpn_completion vpn
 alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
 alias phpdock81="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
 alias phpdock80="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
