@@ -2,40 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/opt/minpac" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/opt/vim-polyglot" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/opt/webapi-vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/ctrlp.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/delimitmate" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/editorconfig-vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/editorconfig-vim/tests/core/tests" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/editorconfig-vim/tests/plugin/spec/plugin_tests" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/emmet-vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/emmet-vim/docs" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neocomplcache.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neosnippet" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/neosnippet-snippets" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/nerdtree" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/rainbow_levels.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/syntastic" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/syntastic-local-eslint.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/tabular" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/targets.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/tcomment_vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/tern_for_vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/unicode.vim" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-colors-solarized" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-commentary" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-css-color" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-es6" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-fugitive" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-indent-guides" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-javascript-syntax" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-node" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-repeat" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-signify" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-surround" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-unimpaired" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/vim/vim/pack/minpac/start/vim-xml-runtime" vcs="Git" />
   </component>
 </project>
