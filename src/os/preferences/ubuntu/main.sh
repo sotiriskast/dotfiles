@@ -12,3 +12,4 @@ print_in_purple "\n • Preferences\n"
 ./region_and_language.sh
 ./dock.sh
 ./keybindings.sh
+./autostart/main.sh
