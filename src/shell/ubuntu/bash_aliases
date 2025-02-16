@@ -133,6 +133,9 @@ _vpn_completion() {
     COMPREPLY=($(compgen -W "$commands" -- "$cur"))
 }
 
+function create_laravel_app() {
+    composer create-project laravel/laravel  $1
+}
 # Register the completion function
 complete -F _vpn_completion vpn
 alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
@@ -150,3 +153,4 @@ alias drestart=docker-restart
 alias dnames=dnames-fn
 alias dps=dockerps
 alias killer=kill-any
+alias laravel_app=create_laravel_app

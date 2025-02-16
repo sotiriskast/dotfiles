@@ -296,3 +296,5 @@
     #     by the local ones
 
     path = ~/.gitconfig.local
+[advice]
+	detachedHead = false
