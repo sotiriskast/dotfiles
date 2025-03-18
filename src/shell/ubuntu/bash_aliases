@@ -138,11 +138,6 @@ function create_laravel_app() {
 }
 # Register the completion function
 complete -F _vpn_completion vpn
-alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
-alias phpdock81="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
-alias phpdock80="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
-alias phpdock74="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.4 && make uplocal"
-alias phpdock73="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.3 && make uplocal"
 
 alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.sh"
 alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
