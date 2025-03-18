@@ -45,6 +45,7 @@ if ! package_is_installed "1password"; then
         || print_error "1password-cli (installation)"
 
     print_success "1Password installed successfully"
+    print_success "1Password installed successfully"
 else
     print_success "1Password is already installed"
 fi
