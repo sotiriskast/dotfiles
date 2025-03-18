@@ -108,23 +108,46 @@ function kill-any() {
 
 # Add this to your ~/.bashrc or ~/.bash_aliases
 vpn() {
-    local config_path="$HOME/.ssh/ic.ovpn"
+    if ! op account get >/dev/null 2>&1; then
+        echo "Signing in to 1Password..."
+        eval $(op signin)
+    fi
+    local temp_config="/tmp/temp_vpn_config_$$.ovpn"
+    local vault="Sotiris" # Change this to your vault name
+    local item_name="IntraClear VPN" # Change this to your item name
+
+    # Create temp file and clean it up on exit
+    trap "rm -f $temp_config" EXIT
 
     case "$1" in
         "connect"|"start")
-            openvpn3 session-start --config "$config_path"
+            # Get VPN config from 1Password and save to temp file
+            op read "op://$vault/$item_name/notesPlain" > "$temp_config"
+            chmod 600 "$temp_config"
+
+            # Start VPN connection
+            openvpn3 session-start --config "$temp_config"
             ;;
         "disconnect"|"stop")
-            openvpn3 session-manage --config "$config_path" --disconnect
+            # For disconnect, we don't need the config file
+            openvpn3 sessions-list | grep -q "ic.ovpn" && \
+            openvpn3 session-manage --path "$(openvpn3 sessions-list | grep ic.ovpn | awk '{print $1}')" --disconnect
             ;;
         "restart")
-            openvpn3 session-manage --config "$config_path" --restart
+            # Get VPN config from 1Password and save to temp file
+            op read "op://$vault/$item_name/notesPlain" > "$temp_config"
+            chmod 600 "$temp_config"
+
+            # Restart VPN connection
+            openvpn3 sessions-list | grep -q "ic.ovpn" && \
+            openvpn3 session-manage --path "$(openvpn3 sessions-list | grep ic.ovpn | awk '{print $1}')" --restart
             ;;
         *)
             echo "Usage: vpn [connect|disconnect|restart]"
             ;;
     esac
 }
+
 # Bash completion for vpn function
 _vpn_completion() {
     local cur=${COMP_WORDS[COMP_CWORD]}
@@ -132,12 +155,12 @@ _vpn_completion() {
 
     COMPREPLY=($(compgen -W "$commands" -- "$cur"))
 }
+complete -F _vpn_completion vpn
 
 function create_laravel_app() {
     composer create-project laravel/laravel  $1
 }
 # Register the completion function
-complete -F _vpn_completion vpn
 
 alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.sh"
 alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
