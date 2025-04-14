@@ -41,23 +41,21 @@ function dnames-fn {
 	done
 }
 function docker-start {
-
-if [ -n "$(docker ps -a -q -f id=$1)" ]; then
-    if [ -n "$(docker ps -aq -f status=exited -f id=$1)" ]; then
-        # cleanup
-        echo 'status exited'
+    if [ -n "$(docker ps -a -q -f id=$1)" ]; then
+        if [ -n "$(docker ps -aq -f status=exited -f id=$1)" ]; then
+            # cleanup
+            echo 'status exited'
+        else
+            echo $1;
+                [ ! -z "$1" ] && docker start "$1" || echo docker start $(docker ps -qa)
+        fi
     else
-        echo $1;
-            [ ! -z "$1" ] && docker start "$1" || echo docker start $(docker ps -qa)
+        if [ ! -z "$1" ]; then
+            echo "Container are not exists: ${1}";
+        else
+            docker start $(docker ps -qa)
+        fi
     fi
-else
-    if [ ! -z "$1" ]; then
-        echo "Container are not exists: ${1}";
-    else
-        docker start $(docker ps -qa)
-    fi
-fi
-
 }
 function docker-restart {
     if [ -n "$(docker ps -a -q -f id=$1)" ]; then
@@ -79,11 +77,6 @@ function docker-restart {
 function dockerps() {
     docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"
 }
-alias phpdock82="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.2 && make uplocal"
-alias phpdock81="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.1 && make uplocal"
-alias phpdock80="cd ~/Documents/code/phpdock/ && export PHP_VERSION=8.0 && make uplocal"
-alias phpdock74="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.4 && make uplocal"
-alias phpdock73="cd ~/Documents/code/phpdock/ && export PHP_VERSION=7.3 && make uplocal"
 
 alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.sh"
 alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
