@@ -279,7 +279,7 @@
     useConfigOnly = true
 	email = soteris100@gmail.com
 	name = sotiriskast
-	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCtTxM6ELKzH6k3dYb7ajJbaa4G5EV7ajZo0rgFiVTs7Yejw81STVt78//TlCp3ietCAX725+YSQqGhUemKExd1Ymsn+YTLg3GDJwTc0Uo/CWZWigJuhfrgIcMXhMdWxhDtn2p23gvIOovx5jsfX+BLc3XQd0GIFMpRV33hpdX6NZ/E4Cs0LAuTXmZI9cxau5ueNnjMoUnOXyf0s8ZI0b4LhWPKPGRLO9iC5tP76co4HuZolDdYAa3HUCrDRKdgo44UHQT0/QFrgaRQKOzj3iTlgiEzz2icSiz52vUUciBIwq3lwUz9iCJE7P3ABvfMfV0YExyLcx+NLrRkT03taJ2zEkqirtGkY+35OJTacTlDeaHEf08B11OffqVMhUqRVxUcxlm1k3aJzGt0T7XuooR/Mo//165HBUQ01LotLkS7E7ao0VY9q4x2MU261V2VA44TAHewzJSSxnli1PLGKex2VZlV12V2oX8WYIlsLpWzycLZlL49Uvi40r+nhip0Ba4ozfTmyKO6Cw+YsZ0OX9B1p734J6oP24bWvZgzzewOcEa9kO2OgIV9Vx36Edx+XRL5QfqMgL852AFSX4ScxrUmZvtFCF9nJMjFiIGxc384ruLEedBpEO5txk/sZBzNLgtpTPevFxOtPIhF5VLalc3xj32q+vGrQVMFLGAKak7oyw==
+	signingkey =
 
     # [!] DO NOT store sensitive information such as the Git user
     # credentials (`name` / `email`), or things such as the `signingkey`
@@ -302,6 +302,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	program = /opt/1Password/op-ssh-sign
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
