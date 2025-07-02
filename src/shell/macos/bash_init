@@ -18,3 +18,14 @@ fi
 # https://docs.brew.sh/Manpage#environment
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# 1Password SSH Agent Integration
+#
+# Configure SSH to use 1Password's SSH agent for key management and signing.
+# This enables seamless Git commit signing and SSH authentication through 1Password.
+
+if [ -S ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ]; then
+    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+fi
