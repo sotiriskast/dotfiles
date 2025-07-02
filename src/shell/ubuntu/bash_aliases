@@ -115,9 +115,10 @@ vpn() {
     local temp_config="/tmp/temp_vpn_config_$$.ovpn"
     local vault="Sotiris" # Change this to your vault name
     local item_name="IntraClear VPN" # Change this to your item name
+    local log_file="/tmp/openvpn_log_$$.log"
 
-    # Create temp file and clean it up on exit
-    trap "rm -f $temp_config" EXIT
+    # Create temp files and clean them up on exit
+    trap "rm -f $temp_config $log_file" EXIT
 
     case "$1" in
         "connect"|"start")
@@ -125,25 +126,45 @@ vpn() {
             op read "op://$vault/$item_name/notesPlain" > "$temp_config"
             chmod 600 "$temp_config"
 
-            # Start VPN connection
-            openvpn3 session-start --config "$temp_config"
+            # Start VPN connection with OpenVPN2
+            sudo openvpn --config "$temp_config" --daemon --log "$log_file"
+            echo "OpenVPN connection started. Log file: $log_file"
             ;;
         "disconnect"|"stop")
-            # For disconnect, we don't need the config file
-            openvpn3 sessions-list | grep -q "ic.ovpn" && \
-            openvpn3 session-manage --path "$(openvpn3 sessions-list | grep ic.ovpn | awk '{print $1}')" --disconnect
+            # Find and kill OpenVPN process
+            if pgrep -x "openvpn" > /dev/null; then
+                sudo killall openvpn
+                echo "OpenVPN connection stopped"
+            else
+                echo "No OpenVPN connection found"
+            fi
             ;;
         "restart")
+            # Disconnect if connected
+            if pgrep -x "openvpn" > /dev/null; then
+                sudo killall openvpn
+                echo "Stopping current OpenVPN connection"
+            fi
+
             # Get VPN config from 1Password and save to temp file
             op read "op://$vault/$item_name/notesPlain" > "$temp_config"
             chmod 600 "$temp_config"
 
-            # Restart VPN connection
-            openvpn3 sessions-list | grep -q "ic.ovpn" && \
-            openvpn3 session-manage --path "$(openvpn3 sessions-list | grep ic.ovpn | awk '{print $1}')" --restart
+            # Start VPN connection with OpenVPN2
+            sudo openvpn --config "$temp_config" --daemon --log "$log_file"
+            echo "OpenVPN connection restarted. Log file: $log_file"
+            ;;
+        "status")
+            if pgrep -x "openvpn" > /dev/null; then
+                echo "OpenVPN is running"
+                # Show interface information if tun0 exists
+                ip addr show tun0 2>/dev/null || echo "VPN interface not found"
+            else
+                echo "OpenVPN is not running"
+            fi
             ;;
         *)
-            echo "Usage: vpn [connect|disconnect|restart]"
+            echo "Usage: vpn [connect|disconnect|restart|status]"
             ;;
     esac
 }
@@ -151,7 +172,7 @@ vpn() {
 # Bash completion for vpn function
 _vpn_completion() {
     local cur=${COMP_WORDS[COMP_CWORD]}
-    local commands="connect disconnect restart start stop"
+    local commands="connect disconnect restart status start stop"
 
     COMPREPLY=($(compgen -W "$commands" -- "$cur"))
 }
@@ -166,6 +187,8 @@ alias poc="bash /home/sotiris/Documents/projects/bash_scripts/download_from_poc.
 alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.sh"
 alias docker-import="bash ~/Documents/projects/bash_scripts/docker_mysql_import.sh"
 alias docker-create="bash ~/Documents/projects/bash_scripts/docker_mysql_create.sh"
+alias ssh-report="ssh -i ~/.ssh/intraclear_report skastanas@52.209.41.2"
+alias ssh-report-staging="ssh -i ~/.ssh/intraclear_report skastanas@52.209.56.22"
 alias dstart=docker-start
 alias drestart=docker-restart
 alias dnames=dnames-fn
