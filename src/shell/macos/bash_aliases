@@ -148,7 +148,26 @@ _vpn_completion() {
 
     COMPREPLY=($(compgen -W "$commands" -- "$cur"))
 }
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Download a file from the decta SFTP server.
+# Usage: decta-download <filename>
+
+decta-download() {
+    # Check if a filename argument was provided
+    if [ -z "$1" ]; then
+        echo "Usage: decta-download <filename>"
+        echo "Example: decta-download INTCL_fraud_20250928.csv"
+        return 1
+    fi
+
+    local REMOTE_FILE="/in_file/reports/$1"
+    local LOCAL_PATH="$HOME/Downloads"
+
+    echo "Attempting to download $1 to $LOCAL_PATH..."
+
+    sftp -o IdentitiesOnly=yes -i ~/.ssh/decta_rsa -P 822 "INTCL@files.decta.com:$REMOTE_FILE" "$LOCAL_PATH"
+}
 # Register the completion function
 complete -F _vpn_completion vpn
 
@@ -157,9 +176,13 @@ alias docker-export="bash ~/Documents/projects/bash_scripts/docker_mysql_export.
 alias docker-import="bash ~/Documents/projects/bash_scripts/docker_mysql_import.sh"
 alias docker-create="bash ~/Documents/projects/bash_scripts/docker_mysql_create.sh"
 alias ssh-report="ssh -i ~/.ssh/intraclear_report skastanas@52.209.41.2"
-alias ssh-report-staging="ssh -i ~/.ssh/intraclear_report skastanas@52.209.56.22"
 alias dstart=docker-start
 alias drestart=docker-restart
 alias dnames=dnames-fn
 alias dps=dockerps
 alias killer=kill-any
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Alias for a static SFTP download.
+alias decta-download-static='sftp -o IdentitiesOnly=yes -i ~/.ssh/decta_rsa -P 822 INTCL@files.decta.com:/in_file/reports/INTCL_fraud_20250928.csv ~/Downloads'
+alias decta-sftp="sftp  -o IdentitiesOnly=yes -i ~/.ssh/decta_rsa -P 822 INTCL@files.decta.com"

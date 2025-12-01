@@ -58,3 +58,34 @@ unset -f source_bash_files
 # and time of the last login, the message of the day, etc.).
 
 clear
+
+# Added by LM Studio CLI (lms)
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init - zsh)"
+
+# Flutter - MUST be early to override Homebrew Dart
+export PATH="$HOME/development/flutter/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
+# Dart pub cache
+export PATH="$HOME/.pub-cache/bin:$PATH"
+
+# Gems from rbenv Ruby
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
+
+# Java from Android Studio
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# Android tools
+export PATH="$HOME/Android/cmdline-tools/latest/bin:$PATH"
+
+# LM Studio
+export PATH="$PATH:/Users/sotiriskast/.lmstudio/bin"
+
+# Homebrew - MUST be LAST
+export PATH="$PATH:/opt/homebrew/bin"
+
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
